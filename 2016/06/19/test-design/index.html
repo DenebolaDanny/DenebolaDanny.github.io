@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Denebola" />
+
+
+
+<meta name="description" content="BIT软件测试技术复习 第五章：测试设计技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5 : 测试应用技术">
+<meta property="og:url" content="http://yoursite.com/2016/06/19/test-design/index.html">
+<meta property="og:site_name" content="栗HY的博客">
+<meta property="og:description" content="BIT软件测试技术复习 第五章：测试设计技术">
+<meta property="og:image" content="http://i.imgur.com/y1TLVuZ.jpg">
+<meta property="og:updated_time" content="2016-06-22T11:27:08.423Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="5 : 测试应用技术">
+<meta name="twitter:description" content="BIT软件测试技术复习 第五章：测试设计技术">
+<meta name="twitter:image" content="http://i.imgur.com/y1TLVuZ.jpg">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternative" href="/atom.xml" title="栗HY的博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>5 : 测试应用技术 | 栗HY的博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        open_in_new: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/IMG_4413.JPG" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Denebola</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">一生想做浪漫的极客</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:377102214@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="/DenebolaDanny" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="/denebola-li" title="知乎"></a>
+                            
+                                <a class="fa 网易云音乐" target="_blank" href="/denebola" title="网易云音乐"></a>
+                            
+                                <a class="fa Google" target="_blank" href="/danny940802@gmail.com" title="Google"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试用例/">测试用例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试设计/">测试设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/白盒/">白盒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自动化/">自动化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑盒/">黑盒</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Denebola</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/IMG_4413.JPG" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Denebola</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">一生想做浪漫的极客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:377102214@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="/DenebolaDanny" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="/denebola-li" title="知乎"></a>
+                            
+                                <a class="fa 网易云音乐" target="_blank" href="/denebola" title="网易云音乐"></a>
+                            
+                                <a class="fa Google" target="_blank" href="/danny940802@gmail.com" title="Google"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-test-design" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/19/test-design/" class="article-date">
+      <time datetime="2016-06-18T23:10:00.000Z" itemprop="datePublished">2016-06-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      5 : 测试应用技术
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="兼容性测试"><a href="#兼容性测试" class="headerlink" title="兼容性测试"></a>兼容性测试</h2><p>兼容性测试验证软件与其所依赖的环境的依赖程度，包括对硬件的依赖程度，对平台软件、其他软件的依赖程度等。</p>
+<p>是软件测试中投入较大的一部分。</p>
+<p><strong>目的</strong>：确认硬件环境的描述是否正确</p>
+<p>对于定制系统来说，兼容性测试应尽早进行，否则系统投入使用后，随着系统中数据的增多，兼容性测试的风险和投入将越来越大。</p>
+<h2 id="易用性测试"><a href="#易用性测试" class="headerlink" title="易用性测试"></a>易用性测试</h2><p>易用性是指软件产品被理解、学习、使用和吸引用户的能力。</p>
+<p>易用性是一个很广泛的概念，它涉及到易理解性、易学习性、美观性、一致性、业务符合性等方面。</p>
+<h2 id="可靠性测试"><a href="#可靠性测试" class="headerlink" title="可靠性测试"></a>可靠性测试</h2><ul>
+<li>执行时间（Executing Time）是指执行一个程序所用的实际时间和中央处理器所用的时间，或者是程序处于执行过程中的一段时间</li>
+<li>日历时间（Calendar Time）指的是编年时间，包括计算机可能未运行的时间</li>
+<li>时钟时间（Clock Time）是指从程序执行开始到程序执行完毕所经历的钟表时间</li>
+</ul>
+<h2 id="负载压力测试"><a href="#负载压力测试" class="headerlink" title="负载压力测试"></a>负载压力测试</h2><p>系统的负载压力是指系统在某种指定软件、硬件以及网络环境下承受的流量，例如并发用户数、持续运行时间、数据量等，其中<strong>并发用户数是负载压力的重要体现。</strong></p>
+<p><strong>负载测试</strong>是确定在各种工作负载下系统的性能，目标是测试当负载逐渐增加时，系统组成部分的相应输出项，例如通过量、响应时间、CPU负载、内存使用等如何决定系统的性能，如稳定性和响应等。</p>
+<p><strong>负载压力测试</strong>是指在一定的约束条件下测试系统所能承受的并发用户数量、运行时间、数据量，以确定系统所能承受的最大负载压力。</p>
+<p>负载压力测试包括：</p>
+<ul>
+<li>并发性能测试（重点）</li>
+<li>疲劳强度测试</li>
+<li>大数据量测试</li>
+</ul>
+<h2 id="测试环境、工具、数据准备"><a href="#测试环境、工具、数据准备" class="headerlink" title="测试环境、工具、数据准备"></a>测试环境、工具、数据准备</h2><p>缺陷：</p>
+<ul>
+<li>缺乏功能点的校验</li>
+<li>对有些控件支持得不好</li>
+<li>不能达到真实模拟负载</li>
+<li>脚本的支持不够灵活</li>
+<li>报错定位不够详细</li>
+</ul>
+<p>盲点：</p>
+<ul>
+<li>当功能错误发生时，测试工具不能够记录产生的功能性错误，这就忽略了负载压力情况下的功能不稳定问题。</li>
+<li>记录所有虚拟用户的操作及服务器的响应是当前负载压力测试技术发展的最大挑战。</li>
+<li>导致资源消耗、操作行为增加以及产生大量日志等问题。</li>
+</ul>
+<h2 id="本地化与国际化"><a href="#本地化与国际化" class="headerlink" title="本地化与国际化"></a>本地化与国际化</h2><p>软件国际化：I18N<br>软件本地化：L10N<br>软件全球化：G11N</p>
+<p>I18N是L10N的基础和前提，为L10N做准备</p>
+<p>I18N是软件产品源语言开发的一部分，属于Engineering</p>
+<p><img src="http://i.imgur.com/y1TLVuZ.jpg" alt=""></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/06/19/test-design/">5 : 测试应用技术</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Denebola</a></p>
+        <p><span>发布时间:</span>2016-06-19, 07:10:00</p>
+        <p><span>最后更新:</span>2016-06-22, 19:27:08</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/06/19/test-design/" title="5 : 测试应用技术">http://yoursite.com/2016/06/19/test-design/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/06/19/test-design/　　作者: Denebola" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/06/19/Software-Test-Automation/">
+                    6 : 软件测试自动化
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/06/16/test-design/">
+                    4 : 测试设计技术
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#兼容性测试"><span class="toc-number">1.</span> <span class="toc-text">兼容性测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#易用性测试"><span class="toc-number">2.</span> <span class="toc-text">易用性测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可靠性测试"><span class="toc-number">3.</span> <span class="toc-text">可靠性测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#负载压力测试"><span class="toc-number">4.</span> <span class="toc-text">负载压力测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试环境、工具、数据准备"><span class="toc-number">5.</span> <span class="toc-text">测试环境、工具、数据准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地化与国际化"><span class="toc-number">6.</span> <span class="toc-text">本地化与国际化</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script>
+    yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+</script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"5 : 测试应用技术　| 栗HY的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/06/19/Software-Test-Automation/" title="上一篇: 6 : 软件测试自动化">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/06/16/test-design/" title="下一篇: 4 : 测试设计技术">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/19/Software-Testing-Standards/">3 : 软件测试标准</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/19/Software-Testing-Practice/">2 : 软件测试实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/19/Software-Testing-Foundation/">1 : 软件测试基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/19/Software-Test-Automation/">6 : 软件测试自动化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/19/test-design/">5 : 测试应用技术</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/16/test-design/">4 : 测试设计技术</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016 Denebola
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/DenebolaDanny/DenebolaDanny.github.io" target="_blank" title="tooltip.Danny  vundefined">Danny</a> by Denebola <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 1;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
