@@ -4,12 +4,6 @@
   
     
     <entry>
-      <title><![CDATA[Fade away游戏试玩视频]]></title>
-      <url>http://yoursite.com/2016/06/22/Fade%20away%20test/</url>
-      <content type="html"><![CDATA[<iframe height="498" width="510" src="http://cache.tv.qq.com/qqplayerout.swf?vid=c03084s0idi" frameborder="0" allowfullscreen><br></iframe>]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[3 : 软件测试标准]]></title>
       <url>http://yoursite.com/2016/06/19/Software-Testing-Standards/</url>
       <content type="html"><![CDATA[<h2 id="软件的生命周期及开发模型"><a href="#软件的生命周期及开发模型" class="headerlink" title="软件的生命周期及开发模型"></a>软件的生命周期及开发模型</h2><p><img src="http://i.imgur.com/Fskd7S0.jpg" alt=""></p>
@@ -467,6 +461,16 @@ A. 条件覆盖 B. 判定覆盖 C. 条件组合覆盖 D. 路径覆盖
 <li>基于类型的分割</li>
 </ul>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Fade away游戏试玩视频]]></title>
+      <url>http://yoursite.com/2016/05/19/Fade%20away%20test/</url>
+      <content type="html"><![CDATA[<h2 id="Fade-Away"><a href="#Fade-Away" class="headerlink" title="Fade Away"></a>Fade Away</h2><p>此游戏是BIT《游戏设计概论》课程的实践项目，基于UNITY 3D开发，项目历时不足两月。</p>
+<p>水平有限，还请多多批评O(∩_∩)O</p>
+<pre><code>评论模块还在施工中/(ㄒoㄒ)/~~可以在微博中call我
+</code></pre><hr>
+<iframe height="768" width="1280" src="http://cache.tv.qq.com/qqplayerout.swf?vid=c03084s0idi" frameborder="0" allowfullscreen><br></iframe>]]></content>
     </entry>
     
   
