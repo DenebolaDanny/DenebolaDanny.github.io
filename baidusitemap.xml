@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
+  <url>
+    <loc>http://denebola.win/2016/11/30/Block-Chain-Learn-01/</loc>
+    <lastmod>2016-12-01T03:41:54.157Z</lastmod>
+    <data>
+        <display>
+        <title>区块链学习笔记（一）：相关概念及观点</title>
+        <pubTime>2016-11-30T07:31:02.000Z</pubTime>
+        
+        <tag>BlockChain </tag>
+         
+         
+           
+             
+              <breadCrumb title="区块链研究" url="http://denebola.win/categories/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%A0%94%E7%A9%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://denebola.win/2016/11/10/Byzantine-Generals-discuss/</loc>
