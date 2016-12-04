@@ -15,16 +15,18 @@
 
 
 
-<meta name="description" content="区块链的简略概述">
+<meta name="description" content="本文通过介绍传统分布式一致性算法和区块链共识模型，以及提出了一些有关两者关系的观点，让大家有个比较系统的了解。 本文打算先提出观点。欢迎大家参与讨论。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="区块链学习笔记（一）：相关概念及观点">
-<meta property="og:url" content="http://denebola.win/2016/11/30/Block-Chain-Learn-01/index.html">
+<meta property="og:title" content="区块链学习笔记（二）：共识算法与传统分布式一致性">
+<meta property="og:url" content="http://denebola.win/2016/12/04/Block-Chain-Learn-02/index.html">
 <meta property="og:site_name" content="栗HY的博客">
-<meta property="og:description" content="区块链的简略概述">
-<meta property="og:updated_time" content="2016-12-01T03:41:54.157Z">
+<meta property="og:description" content="本文通过介绍传统分布式一致性算法和区块链共识模型，以及提出了一些有关两者关系的观点，让大家有个比较系统的了解。 本文打算先提出观点。欢迎大家参与讨论。">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz/aqZlFmib0UrCSxoLiaQojmWwa4Wy7n3lqvjlzdnLfWTOz1onAQmOvK9nIYNyNiaBVsMJuZWfwy2FddlLdUw6WVLDg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:updated_time" content="2016-12-04T07:36:02.371Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="区块链学习笔记（一）：相关概念及观点">
-<meta name="twitter:description" content="区块链的简略概述">
+<meta name="twitter:title" content="区块链学习笔记（二）：共识算法与传统分布式一致性">
+<meta name="twitter:description" content="本文通过介绍传统分布式一致性算法和区块链共识模型，以及提出了一些有关两者关系的观点，让大家有个比较系统的了解。 本文打算先提出观点。欢迎大家参与讨论。">
+<meta name="twitter:image" content="http://mmbiz.qpic.cn/mmbiz/aqZlFmib0UrCSxoLiaQojmWwa4Wy7n3lqvjlzdnLfWTOz1onAQmOvK9nIYNyNiaBVsMJuZWfwy2FddlLdUw6WVLDg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>区块链学习笔记（一）：相关概念及观点 | 栗HY的博客</title>
+<title>区块链学习笔记（二）：共识算法与传统分布式一致性 | 栗HY的博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -278,11 +280,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Block-Chain-Learn-01" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Block-Chain-Learn-02" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/30/Block-Chain-Learn-01/" class="article-date">
-      <time datetime="2016-11-30T07:31:02.000Z" itemprop="datePublished">2016-11-30</time>
+      <a href="/2016/12/04/Block-Chain-Learn-02/" class="article-date">
+      <time datetime="2016-12-04T07:32:02.000Z" itemprop="datePublished">2016-12-04</time>
 </a>
     </div>
   
@@ -295,7 +297,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      区块链学习笔记（一）：相关概念及观点
+      区块链学习笔记（二）：共识算法与传统分布式一致性
     </h1>
   
 
@@ -320,29 +322,31 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="区块链相关概念"><a href="#区块链相关概念" class="headerlink" title="区块链相关概念"></a>区块链相关概念</h2><blockquote>
-<p>原文作者：龚鸣（暴走恭亲王）</p>
-</blockquote>
-<h3 id="一、定义"><a href="#一、定义" class="headerlink" title="一、定义"></a>一、定义</h3><p>区块链（Blockchain）是指通过去中心化和去信任的方式集体维护一个可靠数据库的技术方案。该技术方案主要让参与系统中的任意多个节点，通过一串使用密码学方法相关联产生的数据块（block），每个数据块中包含了一定时间内的系统全部信息交流数据，并且生成数据指纹用于验证其信息的有效性和链接（chain）下一个数据库块。</p>
-<p>区块链是一种类似于NoSQL（非关系型数据库）这样的技术解决方案统称，并不是某种特定技术，能够通过很多编程语言和架构来实现区块链技术。并且实现区块链的方式种类也有很多，目前常见的包括POW（Proof of Work，工作量证明），POS（Proof of Stake，权益证明），DPOS（Delegate Proof of Stake，股份授权证明机制）等。</p>
-<p>区块链的概念首次在论文《比特币：一种点对点的电子现金系统（Bitcoin: A Peer-to-Peer Electronic Cash System）》中提出，作者为自称中本聪（Satoshi Nakamoto）的个人（或团体）。因此可以把比特币看成区块链的首个在金融支付领域中的应用。</p>
-<h3 id="二、特征"><a href="#二、特征" class="headerlink" title="二、特征"></a>二、特征</h3><p>结合定义区块链的定义，需要有这四个特征我们才能认为：<strong>去中心化（Decentralized）、去信任（Trustless）、集体维护（Collectively maintain）、可靠数据库（Reliable Database）</strong>。并且由四个特征会引申出另外2个特征：开源（Open Source）、匿名性（Anonymity）。如果一个系统不具备这些特征，将不能视其为基于区块链技术的应用。</p>
+        <h2 id="区块链学习笔记（二）：共识算法与传统分布式一致性"><a href="#区块链学习笔记（二）：共识算法与传统分布式一致性" class="headerlink" title="区块链学习笔记（二）：共识算法与传统分布式一致性"></a>区块链学习笔记（二）：共识算法与传统分布式一致性</h2><p>本文通过介绍传统分布式一致性算法和区块链共识模型，以及提出了一些有关两者关系的观点，让大家有个比较系统的了解。</p>
+<p>本文打算先提出观点。欢迎大家参与讨论。</p>
+<h3 id="1-传统分布式一致性算法和区块链共识过程的异同点"><a href="#1-传统分布式一致性算法和区块链共识过程的异同点" class="headerlink" title="1. 传统分布式一致性算法和区块链共识过程的异同点"></a>1. 传统分布式一致性算法和区块链共识过程的异同点</h3><p><strong>相同点：</strong></p>
 <ul>
-<li><strong>去中心化（Decentralized）</strong>：整个网络没有中心化的硬件或者管理机构，任意节点之间的权利和义务都是均等的，且任一节点的损坏或者失去都会不影响整个系统的运作。因此也可以认为区块链系统具有极好的健壮性。</li>
-<li><strong>去信任（Trustless）</strong>：参与整个系统中的每个节点之间进行数据交换是无需互相信任的，整个系统的运作规则是公开透明的，所有的数据内容也是公开的，因此在系统指定的规则范围和时间范围内，节点之间是不能也无法欺骗其它节点。</li>
-<li><strong>集体维护（Collectively maintain）</strong>：系统中的数据块由整个系统中所有具有维护功能的节点来共同维护的，而这些具有维护功能的节点是任何人都可以参与的。</li>
-<li><strong>可靠数据库（Reliable Database）</strong>：整个系统将通过分数据库的形式，让每个参与节点都能获得一份完整数据库的拷贝。除非能够同时控制整个系统中超过51%的节点，否则单个节点上对数据库的修改是无效的，也无法影响其他节点上的数据内容。因此参与系统中的节点越多和计算能力越强，该系统中的数据安全性越高。</li>
-<li><strong>开源（Open Source）</strong>：由于整个系统的运作规则必须是公开透明的，所以对于程序而言，整个系统必定会是开源的。</li>
-<li><strong>匿名性（Anonymity）</strong>：由于节点和节点之间是无需互相信任的，因此节点和节点之间无需公开身份，在系统中的每个参与的节点都是匿名的。</li>
+<li>Append only</li>
+<li>强调序列化</li>
+<li>少数服从多数原则</li>
+<li>分离覆盖的问题：即长链覆盖短链区块，多节点覆盖少数节点日志</li>
 </ul>
-<h3 id="三、区块链意义之一-：解决拜占庭将军问题"><a href="#三、区块链意义之一-：解决拜占庭将军问题" class="headerlink" title="三、区块链意义之一 ：解决拜占庭将军问题"></a>三、区块链意义之一 ：解决拜占庭将军问题</h3><p>区块链解决的核心问题不是“数字货币”，而是在信息不对称、不确定的环境下，如何建立满足经济活动赖以发生、发展的“信任”生态体系。而这个问题称之为“拜占庭将军问题”，也可称为“拜占庭容错”或者“两军问题”，这是一个分布式系统中进行信息机交互时面临的难题，即在整个网络中的任意节点都无法信任与之通信的对方时，如何能创建出共识基础来进行安全的信息交互而无需担心数据被篡改。区块链使用算法证明机制来保证整个网络的安全，借助它，整个系统中的所有节点能够在去信任的环境下自动安全的交换数据。关于解决拜占庭将军的细节问题请参见本博客中的一篇文章。</p>
-<h3 id="四、区块链意义之二：实现跨国价值转移"><a href="#四、区块链意义之二：实现跨国价值转移" class="headerlink" title="四、区块链意义之二：实现跨国价值转移"></a>四、区块链意义之二：实现跨国价值转移</h3><p>互联网诞生最初，最早核心解决的问题是信息制造和传输，我们可以通过互联网将信息快速生成并且复制到全世界每一个有着网络的角落，但是它尚始终不能解决价值转移和信用转移。这里所谓的价值转移是指，在网络中每个人都能够认可和确认的方式，将某一部分价值精确的从某一个地址转移到另一个地址，而且必须确保当价值转移后，原来的地址减少了被转移的部分，而新的地址增加了所转移的价值。这里说的价值可以是货币资产，也可以是某种实体资产或者虚拟资产（包括有价证券、金融衍生品等）。而这操作的结果必须获得所有参与方的认可，且其结果不能受到任何某一方的操纵。</p>
-<p>在目前的互联网中也有各种各样的金融体系，也有许多政府银行提供或者第三方提供的支付系统，但是它还是依靠中心化的方案来解决。所谓中心化的方案，就是通过某个公司或者政府信用作为背书，将所有的价值转移计算放在一个中心服务器（集群）中，尽管所有的计算也是由程序自动完成，但是却必须信任这个中心化的人或者机构。事实上通过中心化的信用背书来解决，也只能将信用局限在一定的机构、地区或者国家的范围之内。由此可以看出，必须要解决的这个根本问题，那就是信用。所以价值转移的核心问题是跨国信用共识。</p>
-<p>在如此纷繁复杂的全球体系中，要凭空建立一个全球性的信用共识体系是很难的，由于每个国家的政治、经济和文化情况不同，对于两个国家的企业和政府完全互信是几乎做不到的，这也就意味着无论是以个人抑或企业政府的信用进行背书，对于跨国之间的价值交换即使可以完成，也有着巨大的时间和经济成本。但是在漫长的人类历史中，无论每个国家的宗教、政治和文化是如何的不同，唯一能取得共识的是数学（基础科学）。因此，可以毫不夸张的说，数学（算法）是全球文明的最大公约数，也是全球人类获得最多共识的基础。如果我们以数学算法（程序）作为背书，所有的规则都建立一个公开透明的数学算法（程序）之上，能够让所有不同政治文化背景的人群获得共识。</p>
-<h3 id="五、未来的发展"><a href="#五、未来的发展" class="headerlink" title="五、未来的发展"></a>五、未来的发展</h3><p>互联网将使得全球之间的互动越来越紧密，伴随而来的就是巨大的信任鸿沟。目前现有的主流数据库技术架构都是私密且中心化的，在这个架构上是永远无法解决价值转移和互信问题。所以区块链技术有可能将成为下一代数据库架构。通过去中心化技术，将能够在大数据的基础上完成数学（算法）背书、全球互信这个巨大的进步。</p>
-<p>区块链技术作为一种特定分布式存取数据技术，它通过网络中多个参与计算的节点开共同参与数据的计算和记录，并且互相验证其信息的有效性（防伪）。从这一点来，区块链技术也是一种特定的数据库技术。互联网刚刚进入大数据时代，但是从目前来看，大数据还处于非常基础的阶段。但是当进入到区块链数据库阶段，将进入到真正的强信任背书的大数据时代。这里面的所有数据都获得坚不可摧的质量，任何人都没有能力也没有必要去质疑。</p>
-<p>也许我们现在正处在一个重大的转折点之上——和工业革命所带来的深刻变革几乎相同的重大转折的早期阶段。不仅仅是新技术指数级、数字化和组合式的进步与变革，更多的惊喜也许还会在我们前面。在未来的24个月里，这个星球所增长的计算机算力和记录的数据将会超过所有历史阶段的总和。在过去的24个月里，这个增值可能已经超过了1000倍。这些数字化的数据信息还在以比摩尔定律更快的速度增长。区块链技术将不仅仅应用在金融支付领域，而是将会扩展到目前所有应用范围，诸如去中心化的微博、微信、搜索、租房，甚至是打车软件都有可能会出现。因为区块链将可以让人类无地域限制的、去信任的方式来进行大规模协作。</p>
-<p>我们这一代人将很可能会幸运地经历人类历史上两个最让人吃惊的事件，地球上的所有人和所有机器通过区块链技术以前所未有的互信展开了空前的大规模协作，其次就是基于此真正的人工智能将被创造出来。这两个时间将会深深地改变这个世界的经济发展模式。创业者、企业家、科学家以及各种各样的极客将利用这个充裕的世界去创造能让我们震惊和快乐。</p>
+<p><strong>不同点：</strong></p>
+<ul>
+<li>传统分布式一致性算法大多不考虑拜占庭容错(Byzanetine Paxos除外)，即假设所有节点只发生宕机、网络故障等非人为问题，并不考虑恶意节点篡改数据的问题；</li>
+<li>传统分布式一致性算法是面向日志（数据库）的，即更通用的情况，而区块链共识模型面向交易的，所以严格来说，传统分布式一致性算法应该处于区块链共识模型的下面一层。</li>
+</ul>
+<h3 id="2-区块链共识模型与传统一致性算法的关系"><a href="#2-区块链共识模型与传统一致性算法的关系" class="headerlink" title="2. 区块链共识模型与传统一致性算法的关系"></a>2. 区块链共识模型与传统一致性算法的关系</h3><p>考虑上面的不同点，结合私有链和行业链的性质，我们有：</p>
+<ul>
+<li>私有链：封闭生态的存储网络，所有节点都是可信任的，如某大型集团内部多数公司。</li>
+<li>行业链：半封闭生态的交易网络，存在对等的不信任节点，如房地产行业A、B、C、D公司。</li>
+<li>公有链：开放生态的交易网络，这层主要是为行业链和私有链提供全球交易网络。</li>
+</ul>
+<p>由于私有链是封闭生态的存储网络，也就是说使用传统分布式一致性模型应该是最优的；</p>
+<p>由于联盟行业链其半封闭半开放特性，使用Delegated Proof of XXX 是最优的，可以考虑以传统一致性算法作为基础加入拜占庭容错/安全防护机制进行改进。</p>
+<p>公有链PoW应该仍然是最优的选择。  </p>
+<p>如下图所示：<br><img src="http://mmbiz.qpic.cn/mmbiz/aqZlFmib0UrCSxoLiaQojmWwa4Wy7n3lqvjlzdnLfWTOz1onAQmOvK9nIYNyNiaBVsMJuZWfwy2FddlLdUw6WVLDg/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<h3 id="3-相关共识算法"><a href="#3-相关共识算法" class="headerlink" title="3. 相关共识算法"></a>3. 相关共识算法</h3><p>待更新</p>
 
       
     </div>
@@ -351,13 +355,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/11/30/Block-Chain-Learn-01/">区块链学习笔记（一）：相关概念及观点</a></p>
+        <p><span>本文标题:</span><a href="/2016/12/04/Block-Chain-Learn-02/">区块链学习笔记（二）：共识算法与传统分布式一致性</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Denebola</a></p>
-        <p><span>发布时间:</span>2016-11-30, 15:31:02</p>
-        <p><span>最后更新:</span>2016-12-01, 11:41:54</p>
+        <p><span>发布时间:</span>2016-12-04, 15:32:02</p>
+        <p><span>最后更新:</span>2016-12-04, 15:36:02</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/11/30/Block-Chain-Learn-01/" title="区块链学习笔记（一）：相关概念及观点">http://denebola.win/2016/11/30/Block-Chain-Learn-01/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://denebola.win/2016/11/30/Block-Chain-Learn-01/　　作者: Denebola" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/12/04/Block-Chain-Learn-02/" title="区块链学习笔记（二）：共识算法与传统分布式一致性">http://denebola.win/2016/12/04/Block-Chain-Learn-02/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://denebola.win/2016/12/04/Block-Chain-Learn-02/　　作者: Denebola" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -369,16 +373,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/12/04/Block-Chain-Learn-02/">
-                    区块链学习笔记（二）：共识算法与传统分布式一致性
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/11/10/Byzantine-Generals-discuss/">
-                    BlockChain--拜占庭将军问题深入探讨
+                <a href="/2016/11/30/Block-Chain-Learn-01/">
+                    区块链学习笔记（一）：相关概念及观点
                 </a>
             </div>
         
@@ -389,7 +387,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#区块链相关概念"><span class="toc-number">1.</span> <span class="toc-text">区块链相关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、定义"><span class="toc-number">1.1.</span> <span class="toc-text">一、定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、特征"><span class="toc-number">1.2.</span> <span class="toc-text">二、特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、区块链意义之一-：解决拜占庭将军问题"><span class="toc-number">1.3.</span> <span class="toc-text">三、区块链意义之一 ：解决拜占庭将军问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、区块链意义之二：实现跨国价值转移"><span class="toc-number">1.4.</span> <span class="toc-text">四、区块链意义之二：实现跨国价值转移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、未来的发展"><span class="toc-number">1.5.</span> <span class="toc-text">五、未来的发展</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#区块链学习笔记（二）：共识算法与传统分布式一致性"><span class="toc-number">1.</span> <span class="toc-text">区块链学习笔记（二）：共识算法与传统分布式一致性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-传统分布式一致性算法和区块链共识过程的异同点"><span class="toc-number">1.1.</span> <span class="toc-text">1. 传统分布式一致性算法和区块链共识过程的异同点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-区块链共识模型与传统一致性算法的关系"><span class="toc-number">1.2.</span> <span class="toc-text">2. 区块链共识模型与传统一致性算法的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-相关共识算法"><span class="toc-number">1.3.</span> <span class="toc-text">3. 相关共识算法</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn,
@@ -420,7 +418,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"区块链学习笔记（一）：相关概念及观点　| 栗HY的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"区块链学习笔记（二）：共识算法与传统分布式一致性　| 栗HY的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -436,7 +434,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/11/30/Block-Chain-Learn-01/" data-title="区块链学习笔记（一）：相关概念及观点" data-url="http://denebola.win/2016/11/30/Block-Chain-Learn-01/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/12/04/Block-Chain-Learn-02/" data-title="区块链学习笔记（二）：共识算法与传统分布式一致性" data-url="http://denebola.win/2016/12/04/Block-Chain-Learn-02/"></div>
     <script>
         var duoshuoQuery = {short_name:"denebola"};
         var loadComment = function(){
@@ -459,15 +457,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/12/04/Block-Chain-Learn-02/" title="上一篇: 区块链学习笔记（二）：共识算法与传统分布式一致性">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/11/10/Byzantine-Generals-discuss/" title="下一篇: BlockChain--拜占庭将军问题深入探讨">
+            <a href="/2016/11/30/Block-Chain-Learn-01/" title="下一篇: 区块链学习笔记（一）：相关概念及观点">
                 <i class="fa fa-angle-right"></i>
             </a>
         

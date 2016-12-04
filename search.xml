@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title><![CDATA[区块链学习笔记（二）：共识算法与传统分布式一致性]]></title>
+      <url>http://denebola.win/2016/12/04/Block-Chain-Learn-02/</url>
+      <content type="html"><![CDATA[<h2 id="区块链学习笔记（二）：共识算法与传统分布式一致性"><a href="#区块链学习笔记（二）：共识算法与传统分布式一致性" class="headerlink" title="区块链学习笔记（二）：共识算法与传统分布式一致性"></a>区块链学习笔记（二）：共识算法与传统分布式一致性</h2><p>本文通过介绍传统分布式一致性算法和区块链共识模型，以及提出了一些有关两者关系的观点，让大家有个比较系统的了解。</p>
+<p>本文打算先提出观点。欢迎大家参与讨论。</p>
+<h3 id="1-传统分布式一致性算法和区块链共识过程的异同点"><a href="#1-传统分布式一致性算法和区块链共识过程的异同点" class="headerlink" title="1. 传统分布式一致性算法和区块链共识过程的异同点"></a>1. 传统分布式一致性算法和区块链共识过程的异同点</h3><p><strong>相同点：</strong></p>
+<ul>
+<li>Append only</li>
+<li>强调序列化</li>
+<li>少数服从多数原则</li>
+<li>分离覆盖的问题：即长链覆盖短链区块，多节点覆盖少数节点日志</li>
+</ul>
+<p><strong>不同点：</strong></p>
+<ul>
+<li>传统分布式一致性算法大多不考虑拜占庭容错(Byzanetine Paxos除外)，即假设所有节点只发生宕机、网络故障等非人为问题，并不考虑恶意节点篡改数据的问题；</li>
+<li>传统分布式一致性算法是面向日志（数据库）的，即更通用的情况，而区块链共识模型面向交易的，所以严格来说，传统分布式一致性算法应该处于区块链共识模型的下面一层。</li>
+</ul>
+<h3 id="2-区块链共识模型与传统一致性算法的关系"><a href="#2-区块链共识模型与传统一致性算法的关系" class="headerlink" title="2. 区块链共识模型与传统一致性算法的关系"></a>2. 区块链共识模型与传统一致性算法的关系</h3><p>考虑上面的不同点，结合私有链和行业链的性质，我们有：</p>
+<ul>
+<li>私有链：封闭生态的存储网络，所有节点都是可信任的，如某大型集团内部多数公司。</li>
+<li>行业链：半封闭生态的交易网络，存在对等的不信任节点，如房地产行业A、B、C、D公司。</li>
+<li>公有链：开放生态的交易网络，这层主要是为行业链和私有链提供全球交易网络。</li>
+</ul>
+<p>由于私有链是封闭生态的存储网络，也就是说使用传统分布式一致性模型应该是最优的；</p>
+<p>由于联盟行业链其半封闭半开放特性，使用Delegated Proof of XXX 是最优的，可以考虑以传统一致性算法作为基础加入拜占庭容错/安全防护机制进行改进。</p>
+<p>公有链PoW应该仍然是最优的选择。  </p>
+<p>如下图所示：<br><img src="http://mmbiz.qpic.cn/mmbiz/aqZlFmib0UrCSxoLiaQojmWwa4Wy7n3lqvjlzdnLfWTOz1onAQmOvK9nIYNyNiaBVsMJuZWfwy2FddlLdUw6WVLDg/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<h3 id="3-相关共识算法"><a href="#3-相关共识算法" class="headerlink" title="3. 相关共识算法"></a>3. 相关共识算法</h3><p>待更新</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[区块链学习笔记（一）：相关概念及观点]]></title>
       <url>http://denebola.win/2016/11/30/Block-Chain-Learn-01/</url>
       <content type="html"><![CDATA[<h2 id="区块链相关概念"><a href="#区块链相关概念" class="headerlink" title="区块链相关概念"></a>区块链相关概念</h2><blockquote>

@@ -3,6 +3,26 @@
 
     
   <url>
+    <loc>http://denebola.win/2016/12/04/Block-Chain-Learn-02/</loc>
+    <lastmod>2016-12-04T07:36:02.371Z</lastmod>
+    <data>
+        <display>
+        <title>区块链学习笔记（二）：共识算法与传统分布式一致性</title>
+        <pubTime>2016-12-04T07:32:02.000Z</pubTime>
+        
+        <tag>BlockChain </tag>
+         
+         
+           
+             
+              <breadCrumb title="区块链研究" url="http://denebola.win/categories/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%A0%94%E7%A9%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://denebola.win/2016/11/30/Block-Chain-Learn-01/</loc>
     <lastmod>2016-12-01T03:41:54.157Z</lastmod>
     <data>
@@ -139,9 +159,9 @@
         <title>6 : 软件测试自动化</title>
         <pubTime>2016-06-19T01:10:00.000Z</pubTime>
         
-        <tag>自动化 </tag>
-         
         <tag>测试 </tag>
+         
+        <tag>自动化 </tag>
          
          
            
@@ -158,8 +178,6 @@
         <title>4 : 测试设计技术</title>
         <pubTime>2016-06-16T04:00:00.000Z</pubTime>
         
-        <tag>测试 </tag>
-         
         <tag>测试设计 </tag>
          
         <tag>测试用例 </tag>
@@ -167,6 +185,8 @@
         <tag>白盒 </tag>
          
         <tag>黑盒 </tag>
+         
+        <tag>测试 </tag>
          
          
            
